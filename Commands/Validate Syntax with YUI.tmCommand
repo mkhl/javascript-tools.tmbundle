@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/bin/bash
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+html_header "Validate Javascript"
+"${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/bin/lint_yui.rb"
+html_footer
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>Validate Syntax with YUI</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>uuid</key>
+	<string>BE54D5E2-D356-4690-A5C3-0D63BA19FECC</string>
+</dict>
+</plist>
