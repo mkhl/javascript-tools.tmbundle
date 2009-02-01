@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/bin/bash
 # jsmin prints an empty line first, strip that:
-ruby "$TM_BUNDLE_SUPPORT/bin/jsmin.rb" | sed '1d'</string>
+"${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/bin/jsmin.rb" | sed '1d'</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>keyEquivalent</key>
