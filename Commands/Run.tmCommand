@@ -59,7 +59,7 @@ html_footer
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
-	<string>Run Javascript ᴬᴸᴾᴴᴬ</string>
+	<string>Run ᴬᴸᴾᴴᴬ</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>
