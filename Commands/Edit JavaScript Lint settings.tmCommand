@@ -6,7 +6,7 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>#!/bin/bash
-mate "$TM_BUNDLE_SUPPORT/conf/jsl.textmate.conf"</string>
+open -a TextMate "$TM_BUNDLE_SUPPORT/conf/jsl.textmate.conf"</string>
 	<key>input</key>
 	<string>none</string>
 	<key>name</key>
