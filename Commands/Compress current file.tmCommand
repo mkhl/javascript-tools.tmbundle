@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/bin/bash
 cat &gt;'/tmp/compress_this_file.js'
-java -jar "$TM_BUNDLE_SUPPORT/lib/custom_rhino.jar" -c '/tmp/compress_this_file.js'</string>
+"${TM_JAVA:-java}" -jar "$TM_BUNDLE_SUPPORT/lib/custom_rhino.jar" -c '/tmp/compress_this_file.js'</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
