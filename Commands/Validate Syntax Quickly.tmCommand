@@ -13,7 +13,7 @@
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
-	<string>Validate Syntax Quick</string>
+	<string>Validate Syntax Quickly</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
