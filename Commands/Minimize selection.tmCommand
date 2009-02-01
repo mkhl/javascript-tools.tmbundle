@@ -5,13 +5,14 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>ruby -e 'print `ruby "$TM_BUNDLE_SUPPORT/bin/jsmin.rb"`[1..-1]'</string>
+	<string># jsmin prints an empty line first, strip that:
+ruby "$TM_BUNDLE_SUPPORT/bin/jsmin.rb" | sed '1d'</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>keyEquivalent</key>
-	<string>^~Q</string>
+	<string>^@c</string>
 	<key>name</key>
-	<string>Minimize selection</string>
+	<string>Compress Document / Selection with JSMin</string>
 	<key>output</key>
 	<string>replaceSelectedText</string>
 	<key>scope</key>
