@@ -5,7 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string># runs on save; only notifies you if it raises a warning or error
+	<string>#!/bin/bash
+# runs on save; only notifies you if it raises a warning or error
 ruby "$TM_BUNDLE_SUPPORT/bin/quick_lint.rb"</string>
 	<key>input</key>
 	<string>none</string>

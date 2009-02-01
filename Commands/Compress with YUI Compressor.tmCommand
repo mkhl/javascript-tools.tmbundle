@@ -5,7 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>java -jar "$TM_BUNDLE_SUPPORT/lib/yuicompressor.jar" --charset utf8 --preserve-semi --type js</string>
+	<string>#!/bin/bash
+java -jar "$TM_BUNDLE_SUPPORT/lib/yuicompressor.jar" --charset utf8 --preserve-semi --type js</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>keyEquivalent</key>

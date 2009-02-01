@@ -5,7 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+	<string>#!/bin/bash
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
 html_header "Validate Javascript"
 "${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/bin/lint.rb"
 html_footer

@@ -5,7 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+	<string>#!/bin/bash
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
 html_header "Javascript Tools Help" "Javascript"
 "$TM_SUPPORT_PATH/lib/markdown_to_help.rb" "$TM_BUNDLE_PATH/README.markdown"
 echo "&lt;p&gt;Feel free to pop open the bundles guts and use the tools directly if you'd like&lt;/p&gt;"

@@ -5,7 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string># jsmin prints an empty line first, strip that:
+	<string>#!/bin/bash
+# jsmin prints an empty line first, strip that:
 ruby "$TM_BUNDLE_SUPPORT/bin/jsmin.rb" | sed '1d'</string>
 	<key>input</key>
 	<string>selection</string>
