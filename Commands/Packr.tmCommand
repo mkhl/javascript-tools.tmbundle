@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 require 'ftools'
-require "#{ENV['TM_BUNDLE_SUPPORT']}/lib/packr-1.0.2/lib/packr.rb"
+require "#{ENV['TM_BUNDLE_SUPPORT']}/lib/packr/lib/packr.rb"
 
 File::copy("#{ENV['TM_FILEPATH']}", '/tmp/compress_this_file.js')
 Packr.pack_file('/tmp/compress_this_file.js', :shrink_vars =&gt; true, :base62 =&gt; !ENV['TM_JST_PB62'].nil?)
