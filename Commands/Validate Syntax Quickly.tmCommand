@@ -6,10 +6,22 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/bin/bash
-# runs on save; only notifies you if it raises a warning or error
-"${TM_RUBY:-ruby}" "$TM_BUNDLE_SUPPORT/bin/quick_lint.rb"</string>
+set -o pipefail
+
+JSL="$TM_BUNDLE_SUPPORT/bin/jsl"
+JSLCONF="$TM_BUNDLE_SUPPORT/conf/jsl.textmate.conf"
+
+# The summary is on the last line.
+out="$("$JSL" -stdin -nofilelisting -nologo -conf "$JSLCONF" | sed -n '$p')"
+
+# If there were errors or warnings
+if (( $? != 0 )); then
+	# Notify the user
+	exit_show_tool_tip "$out"
+fi
+</string>
 	<key>input</key>
-	<string>none</string>
+	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@s</string>
 	<key>name</key>
