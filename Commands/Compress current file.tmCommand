@@ -6,16 +6,22 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>#!/bin/bash
-cat &gt;'/tmp/compress_this_file.js'
-"${TM_JAVA:-java}" -jar "$TM_BUNDLE_SUPPORT/lib/custom_rhino.jar" -c '/tmp/compress_this_file.js'</string>
+TMPFILE="$(mktemp -t shrinksafe)"
+# Clean up after we're done
+trap 'rm -f "$TMPFILE" &amp;&gt;/dev/null' 0
+# Write source to tmpfile
+cat &gt;"$TMPFILE"
+# Compress tmpfile
+"${TM_JAVA:-java}" -jar "$TM_BUNDLE_SUPPORT/lib/shrinksafe.jar" "$TMPFILE"
+</string>
 	<key>input</key>
-	<string>document</string>
+	<string>selection</string>
 	<key>keyEquivalent</key>
 	<string>^@c</string>
 	<key>name</key>
-	<string>Compress (current file)</string>
+	<string>Compress Document / Selection with ShrinkSafe</string>
 	<key>output</key>
-	<string>replaceDocument</string>
+	<string>replaceSelectedText</string>
 	<key>scope</key>
 	<string>source.js</string>
 	<key>uuid</key>
