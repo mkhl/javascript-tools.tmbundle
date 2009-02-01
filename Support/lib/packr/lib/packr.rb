@@ -2,9 +2,9 @@
 # Packer version 3.0 (final) - copyright 2004-2007, Dean Edwards
 # http://www.opensource.org/licenses/mit-license
 
-require "#{ENV['TM_BUNDLE_SUPPORT']}/bin/packr-1.0.2/lib/string.rb"
-require "#{ENV['TM_BUNDLE_SUPPORT']}/bin/packr-1.0.2/lib/packr/regexp_group.rb"
-require "#{ENV['TM_BUNDLE_SUPPORT']}/bin/packr-1.0.2/lib/packr/words.rb"
+require File.dirname(__FILE__) + '/string'
+require File.dirname(__FILE__) + '/packr/regexp_group'
+require File.dirname(__FILE__) + '/packr/words'
 
 class Packr
   
@@ -114,7 +114,7 @@ class Packr
   end
   
   def pack_file(path, options = {})
-    path = path.gsub("#{ENV['TM_DIRECTORY']}", '/')
+    # path = path.gsub(Regexp.new("^((#{RAILS_ROOT.gsub(/\./, "\\.")})?/)?"), RAILS_ROOT + '/')
     script = File.read(path)
     script = pack(script, options)
     File.open(path, 'wb') { |f| f.write(script) }
